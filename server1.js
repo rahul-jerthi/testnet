@@ -25,8 +25,8 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail', // Example: Use Gmail SMTP (you can configure any SMTP service)
   auth: {
-    user: 'jaisaini6167@gmail.com', // Use your Gmail address here
-    pass: 'nrhrkxxglietqrdy',   // Use your Gmail password or App-specific password
+    user: 'example@gmail.com', // Use your Gmail address here
+    pass: 'pass_key',   // Use your Gmail password or App-specific password
   },
 });
 
@@ -60,7 +60,7 @@ app.post('/submit', upload.single('image'), (req, res) => {
   // Setup email data
   const mailOptions = {
     from: email, // From user's email
-    to: 'rahujerthi@gmail.com', // Admin's email where the data will be sent
+    to: 'admin@gmail.com', // Admin's email where the data will be sent
     subject: 'New Form Submission with Image',
     text: `You have a new submission:\n\nName: ${name}\nEmail: ${email}`,
     attachments: [
